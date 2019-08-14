@@ -38,6 +38,7 @@ public class Main extends ListenerAdapter {
 	@Override
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
 		if (event.getAuthor().isBot() || !event.getMessage().getContentRaw().startsWith("//set")) return;
+		else if (!event.getAuthor().getId().equals("411216909422559242")) return;
 		String arg = event.getMessage().getContentRaw();
 
 		if (arg.equals("//set canal")) {
