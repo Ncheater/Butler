@@ -32,19 +32,8 @@ public class Main extends ListenerAdapter {
 	}
 
 	private static void finishSetup() {
+		channel = api.getGuildById("513136956893560853").getTextChannelById(System.getEnv("CANAL"));
 		api.getPresence().setStatus(OnlineStatus.ONLINE);
-	}
-
-	@Override
-	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-		if (event.getAuthor().isBot() || !event.getMessage().getContentRaw().startsWith("//set")) return;
-		else if (!event.getAuthor().getId().equals("411216909422559242")) return;
-		String arg = event.getMessage().getContentRaw();
-
-		if (arg.equals("//set canal")) {
-			channel = event.getChannel();
-			channel.sendMessage("Ta bom cara, vou falar nesse canal quando alguem entrar.").queue();
-		}
 	}
 
 	@Override
