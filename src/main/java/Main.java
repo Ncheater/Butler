@@ -50,7 +50,7 @@ public class Main extends ListenerAdapter {
 	@Override
 	public void onGuildMemberJoin(@Nonnull GuildMemberJoinEvent event) {
 		try {
-			channel.sendMessage(Objects.requireNonNull(Strings.getMsg(MessageType.BOASVINDAS))).queue();
+			channel.sendMessage(Objects.requireNonNull(Strings.getMsg(MessageType.BOASVINDAS)).replace("%user%", event.getUser().getAsMention()).replace("%guild%", event.getGuild().getName())).queue();
 		} catch (Exception e) {
 			api.getUserById("411216909422559242").openPrivateChannel().queue(c -> c.sendMessage("Erro ao encontrar o canal de mensagens:```" + e + " -> " + e.getStackTrace()[0] + "```").queue());
 		}
@@ -59,7 +59,7 @@ public class Main extends ListenerAdapter {
 	@Override
 	public void onGuildMemberLeave(@Nonnull GuildMemberLeaveEvent event) {
 		try {
-			channel.sendMessage(Objects.requireNonNull(Strings.getMsg(MessageType.ADEUS))).queue();
+			channel.sendMessage(Objects.requireNonNull(Strings.getMsg(MessageType.ADEUS)).replace("%user%", event.getUser().getAsMention()).replace("%guild%", event.getGuild().getName())).queue();
 		} catch (Exception e) {
 			api.getUserById("411216909422559242").openPrivateChannel().queue(c -> c.sendMessage("Erro ao encontrar o canal de mensagens:```" + e + " -> " + e.getStackTrace()[0] + "```").queue());
 		}
