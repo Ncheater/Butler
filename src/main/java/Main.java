@@ -24,6 +24,7 @@ public class Main extends ListenerAdapter {
 					.setToken(System.getenv("TOKEN"))
 					.setAutoReconnect(true)
 					.build();
+			api.addEventListener(this);
 		} catch (LoginException e) {
 			System.out.println("Erro ao conectar: " + e + " -> " + e.getStackTrace()[0]);
 		}
