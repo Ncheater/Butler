@@ -32,12 +32,13 @@ public class Main extends ListenerAdapter {
 	}
 
 	private static void finishSetup() {
-		channel = api.getGuildById("513136956893560853").getTextChannelById(System.getEnv("CANAL"));
+		channel = api.getGuildById("513136956893560853").getTextChannelById(System.getenv("CANAL"));
 		api.getPresence().setStatus(OnlineStatus.ONLINE);
 	}
 
 	@Override
 	public void onGuildMemberJoin(@Nonnull GuildMemberJoinEvent event) {
+		if (!event.getGuild().getId().equals("513136956893560853")) return;
 		try {
 			channel.sendMessage(Objects.requireNonNull(Strings.getMsg(MessageType.BOASVINDAS)).replace("%user%", event.getUser().getAsMention()).replace("%guild%", event.getGuild().getName())).queue();
 		} catch (Exception e) {
@@ -47,6 +48,7 @@ public class Main extends ListenerAdapter {
 
 	@Override
 	public void onGuildMemberLeave(@Nonnull GuildMemberLeaveEvent event) {
+		if (!event.getGuild().getId().equals("513136956893560853")) return;
 		try {
 			channel.sendMessage(Objects.requireNonNull(Strings.getMsg(MessageType.ADEUS)).replace("%user%", event.getUser().getAsMention()).replace("%guild%", event.getGuild().getName())).queue();
 		} catch (Exception e) {
