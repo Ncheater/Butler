@@ -37,13 +37,11 @@ public class Main extends ListenerAdapter {
 	@Override
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
 		if (event.getAuthor().isBot() || !event.getMessage().getContentRaw().startsWith("//set")) return;
-		String[] args = event.getMessage().getContentRaw().split(" ");
+		String arg = event.getMessage().getContentRaw();
 
-		if ("canal".equals(Arrays.copyOfRange(args, 1, args.length - 1)[0].trim())) {
+		if (arg.equals("//set canal")) {
 			channel = event.getChannel();
 			channel.sendMessage("Ta bom cara, vou falar nesse canal quando alguem entrar.").queue();
-		} else {
-			event.getChannel().sendMessage("Conheço esse comando não.").queue();
 		}
 	}
 
