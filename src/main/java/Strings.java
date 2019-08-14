@@ -5,7 +5,7 @@ import java.util.Random;
 class Strings {
 	private static String[] boasVindas = {
     "**Seja bem vindo(a) %user% ao servidor %guild%. Cola com nós que é sucesso!**",
-    "**Bem vindo(a) %user% passa em #📚┋registros para ganha novas tag's**"
+    "**Bem vindo(a) %user% passa em <#610181940624228385> para ganha novas tag's**"
 };
 
 	private static String[] adeus = {
