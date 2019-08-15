@@ -10,10 +10,8 @@ class Strings {
   "**CHi, alá! Os gados chegando no servidor. Seja bem vindo(a) %user% **",
   "**Quer nuds quer? %user% ? Divulga o servidor que você ganha.**",
   "**E ae viaddo, quanto tempo. Seja bem vindo(a) e nos conte as novidades.**",
-  "**Salve %user%, passa no <#610181940624228385> pra ganhar carginho.**"
-  
-};r %guild%. Cola com nós que é sucesso!**",
-    "**Bem vindo(a) %user% passa em <#610181940624228385> para ganha novas tag's**"
+  "**Salve %user%, passa no <#610181940624228385> pra ganhar carginho.**",
+  "**Bem vindo(a) %user% passa em <#610338518061023243>.**"
 };
 
 	private static String[] adeus = {
